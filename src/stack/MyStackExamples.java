@@ -21,4 +21,25 @@ public class MyStackExamples {
         return reversedString;
     }
 
+    public static String convertPositiveDecimalToBinary(int n) {
+        String binaryNumber = new String();
+        MyStack<Character> myStack = new MyStack<Character>();
+
+        while (n > 0) {
+            myStack.push((char) ((n % 2) + '0'));
+            n = n / 2;
+        }
+
+        while (!myStack.isEmpty()) {
+            try {
+                binaryNumber = binaryNumber + myStack.peek();
+                myStack.pop();
+            } catch (Exception e) {
+                e.fillInStackTrace();
+            }
+
+        }
+        return binaryNumber;
+    }
+
 }
