@@ -15,7 +15,6 @@ public class MyStack<E> {
     public void push(E data) {
         top++;
         stackList.add(data);
-
     }
 
     public void pop() {
